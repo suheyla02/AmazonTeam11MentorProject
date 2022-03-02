@@ -32,11 +32,23 @@ public class US05UrunFiltrelemeStepDefinitions {
 
     @Then("Kullanici tum urunlerin az fiyattan cok fiyata dogru siralandigini gorur.")
     public void kullaniciTumUrunlerinAzFiyattanCokFiyataDogruSiralandiginiGorur() {
+        int gelenPrijsint1;
+        int gelenPrijsint2;
+
         List<String> gelenPrijs=new ArrayList<>();
-        for(int i=0;i<urunFiltrelemePage.prijs.size();i++){
+
+        for(int i=0;i<urunFiltrelemePage.prijs.size();i++) {
             gelenPrijs.add(urunFiltrelemePage.prijs.get(i).getText());
+
+
         }
+        gelenPrijsint1=Integer.parseInt(gelenPrijs.get(1).replaceAll("[\\D]", ""));
+        gelenPrijsint2=Integer.parseInt(gelenPrijs.get(3).replaceAll("[\\D]", ""));
         System.out.println(gelenPrijs);
+
+        Assert.assertTrue(gelenPrijsint1<=gelenPrijsint2);
+
+
 
 
 

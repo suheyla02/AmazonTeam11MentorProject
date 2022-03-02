@@ -16,7 +16,7 @@ public class US01AmazonSayfasiStepDefinitions {
 
         Driver.getDriver().get(ConfigReader.getProperty("amazon_url"));
         //logger.info("Anasayfa Acildi.");
-       // Log.info("Anasayfa acildi.");
+        Log.info("Anasayfa acildi.");
     }
 
 
